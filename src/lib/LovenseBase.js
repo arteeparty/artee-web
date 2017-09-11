@@ -58,35 +58,35 @@ export default class LovesenseBase {
   }
 
   vibrate(level) {
-    if (typeof level != "number") {
+    if (typeof level !== "number") {
       throw new Error("Command requires a number!");
     }
     return this.writeAndExpectOK("Vibrate:" + level + ";");
   }
 
   rotate(level) {
-    if (typeof level != "number") {
+    if (typeof level !== "number") {
       throw new Error("Command requires a number!");
     }
     return this.writeAndExpectOK("Rotate:" + level + ";");
   }
 
   air(level) {
-    if (typeof level != "number") {
+    if (typeof level !== "number") {
       throw new Error("Command requires a number!");
     }
     return this.writeAndExpectOK("Air:Level:" + level + ";");
   }
 
   inflate(level) {
-    if (typeof level != "number") {
+    if (typeof level !== "number") {
       throw new Error("Command requires a number!");
     }
     return this.writeAndExpectOK("Air:In:" + level + ";");
   }
 
   deflate(level) {
-    if (typeof level != "number") {
+    if (typeof level !== "number") {
       throw new Error("Command requires a number!");
     }
     return this.writeAndExpectOK("Air:Out:" + level + ";");

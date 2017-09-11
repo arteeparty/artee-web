@@ -4,12 +4,21 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "js-cookie": "^2.1.4",
+    "jwt-decode": "^2.2.0",
+    "memory-cache": "^0.2.0",
     "moment": "^2.18.1",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
+    "twilio-video": "^1.2.2"
   },
   "devDependencies": {
-    "node-sass": "^4.5.3",
     "babel-eslint": "^7.2.3",
     "codecov": "^2.2.0",
     "enzyme": "^2.9.1",
@@ -17,6 +26,7 @@
     "eslint-plugin-class-property": "^1.0.6",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
+    "node-sass": "^4.5.3",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.2",

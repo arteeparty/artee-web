@@ -1,13 +1,110 @@
-body {
+* {
+  box-sizing: border-box; }
+
+html, body, #root, .Index {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: 14px; }
+
+h2 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0; }
+
+.Splash {
   display: flex;
-  min-height: 100vh;
-  flex-direction: column; }
-
-main {
-  flex: 1 0 auto; }
-
-#chat-messages {
-  min-height: 10vh;
-  height: 60vh;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  overflow-y: scroll; }
+  height: 100%;
+  background-color: #331F32; }
+
+.App {
+  width: 100%;
+  height: 100%; }
+
+.Controls {
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between; }
+  .Controls__top {
+    padding: 1rem;
+    margin: 0;
+    text-align: center; }
+  .Controls__bottom {
+    text-align: center;
+    padding: 2rem; }
+
+.Video {
+  background-color: #000; }
+  .Video__remote {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%; }
+  .Video__local {
+    display: block;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    width: 200px;
+    height: 200px; }
+
+button, .button {
+  font-size: inherit;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  padding: 12px 18px;
+  margin: 0 5px;
+  cursor: pointer; }
+  button--primary, .button--primary {
+    background-color: #DB143C;
+    color: #fff; }
+    button--primary:hover, .button--primary:hover {
+      background-color: #d21339; }
+  button--green, .button--green {
+    background-color: green;
+    color: #fff; }
+    button--green:hover, .button--green:hover {
+      background-color: #007600; }
+
+.status {
+  color: #fff; }
+
+label {
+  display: block;
+  text-align: center;
+  padding: 1rem 1rem; }
+
+input,
+select {
+  display: block;
+  outline: none;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  border-bottom: solid 1px #d9e3ed;
+  padding: 4px 16px;
+  font-size: 14px;
+  margin: 0; }
+
+.Login {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 1rem;
+  border: solid 1px #FFF6CC;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .Login input {
+    text-align: center; }
+  .Login h2 {
+    text-align: center; }

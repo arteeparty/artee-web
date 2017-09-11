@@ -1,62 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import LovenseWebBluetooth from "./lib/LovenseWebBluetooth";
+import { Route } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import App from "./App";
+import Login from "./auth/Login";
+import createStore from "./ducks/index";
 import "./styles/index.css";
 
-class App extends React.Component {
-  state = {
-    value: 0,
-    device: null
-  };
+if (process.env.REACT_APP_VERSION) {
+  console.log({ version: process.env.REACT_APP_VERSION });
+}
 
-  componentDidMount() {
-    this.ws = new WebSocket("wss://api.artee.party/ws");
-    this.ws.onmessage = e => this.handleMessage(JSON.parse(e.data));
-  }
-
-  componentWillUnmount() {
-    this.ws.close();
-  }
-
-  connect = () => {
-    LovenseWebBluetooth.findDevice().then(d => {
-      if (!d) {
-        return;
-      }
-      const device = new LovenseWebBluetooth(d);
-      device.open();
-      this.setState({ device });
-    });
-  };
-
-  handleMessage = v => {
-    if (v.type === "speed" && this.state.device) {
-      this.state.device.vibrate(parseInt(v.message, 10));
-    }
-  };
-
-  handleChange = e => {
-    if (this.ws) {
-      this.ws.send(JSON.stringify({ type: "speed", message: e.target.value }));
-    }
-    this.setState({ value: e.target.value });
-  };
-
+class Index extends React.Component {
   render() {
     return (
-      <div>
-        <input
-          type="range"
-          value={this.state.value}
-          onChange={this.handleChange}
-          min="0"
-          max="20"
-        />
-        <button onClick={this.connect}>Connect</button>
-        {this.device && <span>Connected</span>}
-      </div>
+      <Provider store={createStore()}>
+        <BrowserRouter>
+          <div className="Index">
+            <Route exact path="/" component={App} />
+            <Route path="/login" component={Login} />
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
 
-export default ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("root"));

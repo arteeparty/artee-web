@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchAPI should handle failure 1`] = `
+[Error: [2mexpect([22m[31mreceived[39m[2m).toEqual([22m[32mexpected[39m[2m)[22m
+
+Expected value to equal:
+  [32m"http://localhost:8000/route"[39m
+Received:
+  [31m"http://localhost:8001/route"[39m]
+`;

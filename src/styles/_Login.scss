@@ -1,0 +1,17 @@
+.Login {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  padding: 1rem;
+  border: solid 1px #FFF6CC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
