@@ -40,7 +40,7 @@ class App extends React.Component {
 
   connectToVideo = async () => {
     this.setState({ loading: true });
-    const token = await fetch(resolveURL("/api/token"), {
+    const token = await fetch(resolveURL("/token"), {
       headers: {
         Authorization: `Bearer ${this.props.access_token}`
       }
