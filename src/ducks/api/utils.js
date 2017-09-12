@@ -1,6 +1,6 @@
 import cache from "memory-cache";
 
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8001";
+const API_BASE = process.env.REACT_APP_API_BASE || "https://api.artee.party";
 
 export function resolveURL(path, scheme = "http") {
   if (scheme !== "http") {
